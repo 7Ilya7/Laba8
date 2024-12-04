@@ -60,6 +60,7 @@ def division():
 def exponentiation():
     calculate("Возведение в степень")
 
+"""Создание основного окна графического интерфейса пользователя"""
 root = tk.Tk()
 root.title("Обработка данных")
 root.geometry("500x500")
@@ -67,30 +68,38 @@ root.geometry("500x500")
 style = ttk.Style()
 style.configure("TButton", padding=5, font=("Arial", 12), background="#FFFFFF")
 
+"""Cоздание рамки для отображения результатов и помещение в нее метку для вывода текста"""
 result_frame = ttk.LabelFrame(text="Результат")
 result_label = ttk.Label(result_frame, text="", wraplength=300)
 result_label.pack(pady=10)
 result_frame.grid(row=20, column=0, columnspan=2, sticky="nsew")
 
+
+"""Создание метки и поле ввода для ввода количества случайных чисел в графическом интерфейсе"""
 number_label = ttk.Label(text="Количество случайных чисел:", font=("Arial", 12))
 number_label.grid(row=0, column=0, padx=5, pady=5)
 number_entry = ttk.Entry(width=20)
 number_entry.grid(row=0, column=1, padx=5, pady=5)
 
+"""Cоздание кнопки"""
 generate_button = ttk.Button(text="Создание файла", command=generate_file, style="TButton")
 generate_button.grid(row=1, column=0, columnspan=1, pady=5, sticky="ew")
 
+"""Создание кнопки “Открыть файл”"""
 read_button = ttk.Button(text="Открыть файл", command=read_file, style="TButton")
 read_button.grid(row=1, column=1, columnspan=1, pady=5, sticky="ew")
 
+"""Создание метку в графическом интерфейсе с текстом “Введите два числа для операций:”"""
 number_value = ttk.Label(text="Введите два числа для операций:", font=("Arial", 12))
 number_value.grid(row=2, column=0, columnspan=2, pady=5)
 
+"""Создание двух полей для ввода текста"""
 a_value = ttk.Entry(width=39)
 a_value.grid(row=3, column=0, padx=5, pady=5)
 b_value = ttk.Entry(width=39)
 b_value.grid(row=3, column=1, padx=5, pady=5)
 
+"""Создание пяти кнопок"""
 addition_button = ttk.Button(text="Сложение", command=addition, style="TButton")
 addition_button.grid(row=4, column=0, columnspan=2, pady=5, sticky="ew")
 subtract_button = ttk.Button(text="Вычисление", command=subtract, style="TButton")
